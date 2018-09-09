@@ -1,0 +1,41 @@
+body {
+    background-image: url("/assets/images/news.jpg");
+    margin: auto;  
+    width: auto;
+}
+
+.navbar {
+    width: 89%;
+    margin-top: 70px;
+    margin: auto;
+}
+
+.text-center {
+    background-image: url("/assets/images/newsbg.jpg");
+    background-repeat: no-repeat;
+    color: rgb(110, 162, 202);
+    height: 300px;
+    padding: 100px;
+    margin-top: 70px;
+}
+
+.deleteNote {
+	display: inline-block;
+}
+
+.previousNotes {
+    display: inline-block;
+    width: 90%
+}
+
+#scrape {
+    margin: 8px 0px;
+}
+.note-footer {
+    margin: auto;
+}
+.panel {
+    margin: 10px;
+    margin-left: -15px;
+    width: 103%;
+}
