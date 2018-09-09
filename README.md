@@ -1,6 +1,6 @@
 # News Article Scraper
 
-[Check out the App](https://sheltered-gorge-91026.herokuapp.com/)
+[Check out the App]()
 
 ## Technologies Used
 - Node.js
