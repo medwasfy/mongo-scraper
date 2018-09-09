@@ -31,7 +31,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 // Database configuration 
-// mongoose.connect("mongodb://heroku_jmv816f9:5j1nd4taq42hi29bfm5hobeujd@ds133192.mlab.com:33192/heroku_jmv816f9");
+
 mongoose.connect("mongodb://localhost/newsScraper");
 var db = mongoose.connection;
 // Show mongoose errors if any
