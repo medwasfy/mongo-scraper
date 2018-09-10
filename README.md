@@ -1,6 +1,6 @@
 # News Article Scraper
 
-[Check out the App](https://floating-hollows-43063.herokuapp.com/)
+[Check out the App](https://mongo-worldnews-scraper.herokuapp.com/)
 
 ## Technologies Used
 - Node.js
