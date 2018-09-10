@@ -1,6 +1,6 @@
 # News Article Scraper
 
-[Check out the App]()
+[Check out the App](https://floating-hollows-43063.herokuapp.com/)
 
 ## Technologies Used
 - Node.js
@@ -25,4 +25,10 @@
 * Comments can be added on saved articles by clicking the "Add a Note" button.
 * Saved articles can be deleted by clicking the "Delete" button.
 
+## Screenshots
 
+![Alt text](https://github.com/medwasfy/mongo-scraper/blob/master/public/assets/images/Screen%20Shot%201.png)
+
+![Alt text](https://github.com/medwasfy/mongo-scraper/blob/master/public/assets/images/Screen%20Shot%202.png)
+
+![Alt text](https://github.com/medwasfy/mongo-scraper/blob/master/public/assets/images/Screen%20Shot%203.png)
