@@ -9,9 +9,6 @@ var Article = require("./models/Article.js");
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
-// Set mongoose 
-mongoose.Promise = Promise;
-//Define port
 // Initialize Express
 var app = express();
 // Use morgan and body parser 
@@ -29,9 +26,14 @@ app.engine("handlebars", exphbs({
   partialsDir: path.join(__dirname, "/views/layouts/partials")
 }));
 app.set("view engine", "handlebars");
-// Database configuration 
-
-mongoose.connect("mongodb://localhost/newsScraper");
+// ==================================
+// Database configuration
+// Connectong Mongodb through MLAB
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://medwasfy:medwasfy1@ds151402.mlab.com:51402/mongo-news-scraper";
+// Set mongoose 
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+// mongoose.connect("mongodb://localhost/newsScraper");
 var db = mongoose.connection;
 // Show mongoose errors if any
 db.on("error", function(error) {
@@ -195,6 +197,7 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
   });
 });
 
+// Define port
 // Listen on port
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
