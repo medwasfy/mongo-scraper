@@ -1,7 +1,7 @@
+var mongoose = require("mongoose");
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
-var mongoose = require("mongoose");
 var path = require("path");
 // Note and Article models
 var Note = require("./models/Note.js");
@@ -196,7 +196,7 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
 });
 
 // Listen on port
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
