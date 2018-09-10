@@ -12,7 +12,6 @@ var cheerio = require("cheerio");
 // Set mongoose 
 mongoose.Promise = Promise;
 //Define port
-var port = process.env.PORT || 5000
 // Initialize Express
 var app = express();
 // Use morgan and body parser 
@@ -26,8 +25,8 @@ app.use(express.static("public"));
 var exphbs = require("express-handlebars");
 // Set Engine
 app.engine("handlebars", exphbs({
-    defaultLayout: "main",
-    partialsDir: path.join(__dirname, "/views/layouts/partials")
+  defaultLayout: "main",
+  partialsDir: path.join(__dirname, "/views/layouts/partials")
 }));
 app.set("view engine", "handlebars");
 // Database configuration 
@@ -85,10 +84,10 @@ app.get("/scrape", function(req, res) {
           console.log(doc);
         }
       });
-
+      
     });
-        res.send("Scrape Successful!");
-
+    res.send("Scrape Successful!");
+    
   });
 });
 
@@ -121,28 +120,28 @@ app.get("/articles/:id", function(req, res) {
 
 // Save an article and update 
 app.post("/articles/save/:id", function(req, res) {
-      Article.findOneAndUpdate({ "_id": req.params.id }, { "saved": true})
-      .exec(function(err, doc) {
-        if (err) {
-          console.log(err);
-        }
-        else {
-          res.send(doc);
-        }
-      });
+  Article.findOneAndUpdate({ "_id": req.params.id }, { "saved": true})
+  .exec(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
 });
 
 // Delete an article
 app.post("/articles/delete/:id", function(req, res) {
-      Article.findOneAndUpdate({ "_id": req.params.id }, {"saved": false, "notes": []})
-      .exec(function(err, doc) {
-        if (err) {
-          console.log(err);
-        }
-        else {
-          res.send(doc);
-        }
-      });
+  Article.findOneAndUpdate({ "_id": req.params.id }, {"saved": false, "notes": []})
+  .exec(function(err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
 });
 
 
@@ -183,21 +182,22 @@ app.delete("/notes/delete/:note_id/:article_id", function(req, res) {
     }
     else {
       Article.findOneAndUpdate({ "_id": req.params.article_id }, {$pull: {"notes": req.params.note_id}})
-        .exec(function(err) {
-          if (err) {
-            console.log(err);
-            res.send(err);
-          }
-          else {
-            res.send("Note Deleted");
-          }
-        });
+      .exec(function(err) {
+        if (err) {
+          console.log(err);
+          res.send(err);
+        }
+        else {
+          res.send("Note Deleted");
+        }
+      });
     }
   });
 });
 
 // Listen on port
+var port = process.env.PORT || 5000;
 app.listen(port, function() {
-  console.log("App running on port " + port);
+  console.log("Listening on " + port);
 });
 
